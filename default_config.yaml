@@ -1,0 +1,30 @@
+# Default configuration for the NVIDIA NIM plugin.
+# Values shown here populate the settings UI on first install.
+# Users can override any field in Settings -> External -> NVIDIA NIM.
+
+api_base: https://integrate.api.nvidia.com/v1
+
+# Defaults refreshed 2026-06-19 against the live free-tier catalog at
+# build.nvidia.com/models. These are the strongest free-tier models
+# currently exposed by NVIDIA NIM's hosted API.
+
+# Pre-bound default chat (1T multimodal MoE, free on NVIDIA NIM)
+default_chat_model: moonshotai/kimi-k2.6
+
+# Alternatives (uncomment to switch):
+# default_chat_model: openai/gpt-oss-120b                         # OpenAI MoE reasoning, fits 80GB
+# default_chat_model: meta/llama-4-maverick-17b-128e-instruct     # multimodal 128-expert MoE
+# default_chat_model: nvidia/nemotron-3-ultra-550b-a55b           # 1M context hybrid Mamba-Transformer MoE
+# default_chat_model: deepseek-ai/deepseek-v4-pro                 # 1M context MoE, coding-focused
+# default_chat_model: mistralai/mistral-large-3-675b-instruct-2512 # SoTA general MoE VLM
+# default_chat_model: qwen/qwen3.5-397b-a17b                      # 400B VLM
+# default_chat_model: z-ai/glm-5.1                                # flagship agentic
+# default_chat_model: nvidia/nemotron-3-super-120b-a12b           # efficient hybrid MoE
+
+# Commercial-friendly free embedding (nv-embed-v1 is Non-Commercial)
+default_embedding_model: nvidia/llama-nemotron-embed-1b-v2
+
+# Alternatives:
+# default_embedding_model: nvidia/nv-embed-v1                     # SOTA but Non-Commercial
+# default_embedding_model: baai/bge-m3                            # multilingual
+# default_embedding_model: snowflake/arctic-embed-l               # long-context

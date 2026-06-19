@@ -1,0 +1,33 @@
+# NVIDIA NIM model provider overrides for Agent Zero
+# ----------------------------------------------------
+#
+# This file is merged into /a0/conf/model_providers.yaml by the plugin loader.
+# It exposes the OpenAI-compatible /v1 endpoints of NVIDIA NIM so that
+# LiteLLM can address NVIDIA-hosted models under provider id `nvidia_nim`.
+#
+# Public hosted endpoint (free credits): https://build.nvidia.com
+# API docs: https://docs.api.nvidia.com/nim/reference/llm-api
+#
+# Set NVIDIA_NIM_API_KEY in Settings -> External -> NVIDIA NIM, or as an
+# environment variable. To point at a self-hosted NIM microservice override
+# api_base in Settings; the same key works against the hosted API.
+
+chat:
+  nvidia_nim:
+    name: NVIDIA NIM
+    litellm_provider: openai
+    models_list:
+      endpoint_url: "/v1/models"
+      default_base: "https://integrate.api.nvidia.com"
+    kwargs:
+      api_base: https://integrate.api.nvidia.com/v1
+
+embedding:
+  nvidia_nim:
+    name: NVIDIA NIM
+    litellm_provider: openai
+    models_list:
+      endpoint_url: "/v1/models"
+      default_base: "https://integrate.api.nvidia.com"
+    kwargs:
+      api_base: https://integrate.api.nvidia.com/v1

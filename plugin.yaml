@@ -1,0 +1,9 @@
+name: nvidia_nim
+title: NVIDIA NIM
+description: Adds NVIDIA NIM as a chat and embedding model provider for Agent Zero, exposing the OpenAI-compatible /v1 endpoints of the NVIDIA NIM hosted API and any self-hosted NIM microservice.
+version: 1.0.0
+settings_sections:
+  - external
+per_project_config: false
+per_agent_config: false
+always_enabled: false

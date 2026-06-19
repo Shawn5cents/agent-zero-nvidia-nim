@@ -1,0 +1,60 @@
+<html>
+<head>
+  <title>NVIDIA NIM Settings</title>
+  <script type="module">
+    import { store } from "/components/plugins/plugin-settings-store.js";
+  </script>
+</head>
+<body>
+  <div x-data>
+    <template x-if="$store.pluginSettingsPrototype">
+      <div>
+        <h3 style="margin-top:0">NVIDIA NIM</h3>
+        <p style="opacity:.7; margin-top:0">
+          Provides chat and embedding model providers backed by NVIDIA NIM
+          (NVIDIA Inference Microservice). Get a free API key at
+          <a href="https://build.nvidia.com" target="_blank" rel="noopener">build.nvidia.com</a>.
+          The <code>NVIDIA_NIM_API_KEY</code> environment variable is used
+          when no value is set below.
+        </p>
+
+        <div class="field">
+          <label>API key</label>
+          <input type="password" autocomplete="off"
+                 x-model="config.api_key"
+                 placeholder="nvapi-..." />
+          <small>Stored locally in your plugin config. Leave blank to use the <code>NVIDIA_NIM_API_KEY</code> environment variable.</small>
+        </div>
+
+        <div class="field">
+          <label>API base URL</label>
+          <input type="text"
+                 x-model="config.api_base"
+                 placeholder="https://integrate.api.nvidia.com/v1" />
+          <small>
+            Default points at the public NVIDIA NIM hosted API. To use a
+            self-hosted NIM microservice, set this to e.g.
+            <code>http://host.docker.internal:8000/v1</code>.
+          </small>
+        </div>
+
+        <div class="field">
+          <label>Default chat model</label>
+          <input type="text"
+                 x-model="config.default_chat_model"
+                 placeholder="moonshotai/kimi-k2.6" />
+          <small>Pre-filled in the Model Configuration UI when this provider is selected.</small>
+        </div>
+
+        <div class="field">
+          <label>Default embedding model</label>
+          <input type="text"
+                 x-model="config.default_embedding_model"
+                 placeholder="nvidia/llama-nemotron-embed-1b-v2" />
+          <small>Pre-filled for the embedding role when this provider is selected.</small>
+        </div>
+      </div>
+    </template>
+  </div>
+</body>
+</html>
