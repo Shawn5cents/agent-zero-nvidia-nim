@@ -18,7 +18,6 @@ chat:
     litellm_provider: openai
     models_list:
       endpoint_url: "/v1/models"
-      default_base: "https://integrate.api.nvidia.com"
     kwargs:
       api_base: https://integrate.api.nvidia.com/v1
 
@@ -28,6 +27,5 @@ embedding:
     litellm_provider: openai
     models_list:
       endpoint_url: "/v1/models"
-      default_base: "https://integrate.api.nvidia.com"
     kwargs:
       api_base: https://integrate.api.nvidia.com/v1
