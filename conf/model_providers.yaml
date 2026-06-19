@@ -17,7 +17,7 @@ chat:
     name: NVIDIA NIM
     litellm_provider: openai
     models_list:
-      endpoint_url: "/v1/models"
+      endpoint_url: "https://integrate.api.nvidia.com/v1/models"
     kwargs:
       api_base: https://integrate.api.nvidia.com/v1
 
@@ -26,6 +26,6 @@ embedding:
     name: NVIDIA NIM
     litellm_provider: openai
     models_list:
-      endpoint_url: "/v1/models"
+      endpoint_url: "https://integrate.api.nvidia.com/v1/models"
     kwargs:
       api_base: https://integrate.api.nvidia.com/v1
